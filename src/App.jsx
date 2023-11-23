@@ -5,6 +5,12 @@ function App() {
 	const [글제목, set글제목] = useState(['부천우동 ', '강남우동', '서울우동']);
 	const [날짜, set날짜] = useState(['2월17일', '2월18일', '2월19일']);
 
+	function 제목바꾸기() {
+		var newArray = [...글제목];
+		newArray[0] = '부천씨씨씨씨';
+		set글제목(newArray);
+	}
+
 	const [Num, setNum] = useState(0);
 
 	return (
@@ -24,7 +30,9 @@ function App() {
 					</span>
 					{Num}
 				</h3>
-				<p>{날짜[0]}</p>
+				<p>
+					{날짜[0]} <button onClick={제목바꾸기}>버튼</button>
+				</p>
 			</div>
 			<div className='list'>
 				<h3>
